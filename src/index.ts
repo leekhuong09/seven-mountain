@@ -1,12 +1,13 @@
+import { GAME_MANIFEST } from "./constants/manifest";
+import { GAME_HEIGHT, GAME_WIDTH } from "./constants/index";
 import "pixi-spine";
 import "./style.css";
-import { Application, Assets } from "pixi.js";
+import { Application } from "pixi.js";
 import { getSpine } from "./utils/spine-example";
 import { createBird } from "./utils/create-bird";
+import { createBg } from "./utils/backgrounds";
 import { attachConsole } from "./utils/attach-console";
-
-const gameWidth = 1280;
-const gameHeight = 720;
+import { loadGameAssets, resizeCanvas } from "./utils/canvas";
 
 console.log(
     `%cPixiJS V7\nTypescript Boilerplate%c ${VERSION} %chttp://www.pixijs.com %c❤️`,
@@ -17,70 +18,32 @@ console.log(
 );
 
 const app = new Application<HTMLCanvasElement>({
-    backgroundColor: 0xd3d3d3,
-    width: gameWidth,
-    height: gameHeight,
+    // backgroundColor: 0xd3d3d3,
+    width: GAME_WIDTH,
+    height: GAME_HEIGHT,
 });
 
+console.log("[LOG][app]", app);
+
 window.onload = async (): Promise<void> => {
-    await loadGameAssets();
+    await loadGameAssets(GAME_MANIFEST);
 
     document.body.appendChild(app.view);
 
-    resizeCanvas();
-
+    resizeCanvas(app as any);
+    const bg = await createBg();
     const birdFromSprite = createBird();
     birdFromSprite.anchor.set(0.5, 0.5);
-    birdFromSprite.position.set(gameWidth / 2, gameHeight / 4);
+    birdFromSprite.position.set(GAME_WIDTH / 2, GAME_HEIGHT / 4);
 
     const spineExample = await getSpine();
-
+    app.stage.addChild(bg);
     app.stage.addChild(birdFromSprite);
     app.stage.addChild(spineExample);
     app.stage.interactive = true;
 
     if (VERSION.includes("d")) {
         // if development version
-        attachConsole(app.stage, gameWidth, gameHeight);
+        attachConsole(app.stage, GAME_WIDTH, GAME_HEIGHT);
     }
 };
-
-async function loadGameAssets(): Promise<void> {
-    const manifest = {
-        bundles: [
-            {
-                name: "bird",
-                assets: [
-                    {
-                        name: "bird",
-                        srcs: "./assets/simpleSpriteSheet.json",
-                    },
-                ],
-            },
-            {
-                name: "pixie",
-                assets: [
-                    {
-                        name: "pixie",
-                        srcs: "./assets/spine-assets/pixie.json",
-                    },
-                ],
-            },
-        ],
-    };
-
-    await Assets.init({ manifest });
-    await Assets.loadBundle(["bird", "pixie"]);
-}
-
-function resizeCanvas(): void {
-    const resize = () => {
-        app.renderer.resize(window.innerWidth, window.innerHeight);
-        app.stage.scale.x = window.innerWidth / gameWidth;
-        app.stage.scale.y = window.innerHeight / gameHeight;
-    };
-
-    resize();
-
-    window.addEventListener("resize", resize);
-}
