@@ -3,6 +3,7 @@
     "plugins": ["@typescript-eslint"],
     "extends": ["prettier", "plugin:@typescript-eslint/recommended", "plugin:prettier/recommended"],
     "rules": {
-        "@typescript-eslint/no-explicit-any": "off"
+        "@typescript-eslint/no-explicit-any": "off",
+        "@typescript-eslint/no-unsafe-declaration-merging": "off"
     }
 }
