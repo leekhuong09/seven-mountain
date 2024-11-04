@@ -16,11 +16,11 @@ export type GameManifestType = {
 
 const SEASON_1_BGS: SpriteType[] = [
     {
-        name: "season-1-welcome",
+        name: "welcome-bg",
         assets: [
             {
-                name: "season-1-welcome",
-                srcs: "./assets/season1/backgrounds/welcome.jpeg",
+                name: "welcome-bg",
+                srcs: "./assets/backgrounds/bg-1.jpeg",
             },
         ],
     },
@@ -35,6 +35,15 @@ export const GAME_MANIFEST: GameManifestType = {
                 {
                     name: "bird",
                     srcs: "./assets/simpleSpriteSheet.json",
+                },
+            ],
+        },
+        {
+            name: "wolf-1",
+            assets: [
+                {
+                    name: "wolf-1",
+                    srcs: "./assets/animals/wolf-1/wolf-1.json",
                 },
             ],
         },

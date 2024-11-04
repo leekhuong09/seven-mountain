@@ -16,6 +16,6 @@ export function resizeCanvas(app: any): void {
 
 export async function loadGameAssets(manifest: GameManifestType): Promise<void> {
     await Assets.init({ manifest });
-    Assets.backgroundLoadBundle(["season-1-welcome"]);
-    await Assets.loadBundle(["bird", "pixie", "season-1-welcome"]);
+    Assets.backgroundLoadBundle(["welcome-bg"]);
+    await Assets.loadBundle(["bird", "pixie", "welcome-bg"]);
 }

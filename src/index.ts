@@ -1,8 +1,8 @@
-import { GAME_MANIFEST } from "./constants/manifest";
+// import { GAME_MANIFEST } from "./constants/manifest";
 // import { GAME_MANIFEST } from "./constants/manifest";
 // import { GAME_HEIGHT, GAME_WIDTH } from "./constants/index";
 // import "pixi-spine";
-// import "./style.css";
+import "./style.css";
 // import { Application } from "pixi.js";
 // import { getSpine } from "./utils/spine-example";
 // import { createBird } from "./utils/create-bird";
@@ -10,21 +10,11 @@ import { GAME_MANIFEST } from "./constants/manifest";
 // import { attachConsole } from "./utils/attach-console";
 // import { loadGameAssets, resizeCanvas } from "./utils/canvas";
 
-// console.log(
-//     `%cPixiJS V7\nTypescript Boilerplate%c ${VERSION} %chttp://www.pixijs.com %c❤️`,
-//     "background: #ff66a1; color: #FFFFFF; padding: 2px 4px; border-radius: 2px; font-weight: bold;",
-//     "color: #D81B60; font-weight: bold;",
-//     "color: #C2185B; font-weight: bold; text-decoration: underline;",
-//     "color: #ff66a1;",
-// );
-
 // const app = new Application<HTMLCanvasElement>({
 //     // backgroundColor: 0xd3d3d3,
 //     width: GAME_WIDTH,
 //     height: GAME_HEIGHT,
 // });
-
-// console.log("[LOG][app]", app);
 
 // window.onload = async (): Promise<void> => {
 //     await loadGameAssets(GAME_MANIFEST);

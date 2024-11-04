@@ -1,0 +1,120 @@
+{
+    "frames": {
+        "wolf.png": {
+            "frame": {
+                "x": -23,
+                "y": -23,
+                "w": 56,
+                "h": 42
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 56,
+                "h": 42
+            },
+            "sourceSize": {
+                "w": 56,
+                "h": 42
+            }
+        },
+        "wolfJump-1.png": {
+            "frame": {
+                "x": 12,
+                "y": 76,
+                "w": 88,
+                "h": 53
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 88,
+                "h": 53
+            },
+            "sourceSize": {
+                "w": 88,
+                "h": 53
+            }
+        },
+        "wolfJump-2.png": {
+            "frame": {
+                "x": 96,
+                "y": 67,
+                "w": 88,
+                "h": 53
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 88,
+                "h": 53
+            },
+            "sourceSize": {
+                "w": 88,
+                "h": 53
+            }
+        },
+        "wolfJump-3.png": {
+            "frame": {
+                "x": 187,
+                "y": 67,
+                "w": 88,
+                "h": 53
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 88,
+                "h": 53
+            },
+            "sourceSize": {
+                "w": 88,
+                "h": 53
+            }
+        },
+        "wolfJump-4.png": {
+            "frame": {
+                "x": 280,
+                "y": 67,
+                "w": 88,
+                "h": 53
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 88,
+                "h": 53
+            },
+            "sourceSize": {
+                "w": 88,
+                "h": 53
+            }
+        },
+        "wolfJump-5.png": {
+            "frame": {
+                "x": 367,
+                "y": 67,
+                "w": 88,
+                "h": 53
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 88,
+                "h": 53
+            },
+            "sourceSize": {
+                "w": 88,
+                "h": 53
+            }
+        }
+    },
+    "meta": {
+        "image": "wolf-1.png",
+        "size": {
+            "w": 536,
+            "h": 466
+        },
+        "scale": "1"
+    }
+}

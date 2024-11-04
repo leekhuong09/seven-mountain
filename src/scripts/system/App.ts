@@ -1,4 +1,4 @@
-import { Application, Assets, Sprite } from "pixi.js";
+import { Application, Assets, Sprite, Texture, AnimatedSprite } from "pixi.js";
 
 import { GAME_WIDTH, GAME_HEIGHT } from "./../../constants/index";
 
@@ -15,12 +15,14 @@ interface GamneApp {
 
 class GamneApp {
     constructor() {
-        this.app = new Application<HTMLCanvasElement>({ width: GAME_WIDTH, height: GAME_HEIGHT });
+        this.app = new Application<HTMLCanvasElement>({
+            width: window.innerWidth || GAME_WIDTH,
+            height: window.innerHeight || GAME_HEIGHT,
+        });
     }
     run(config?: any) {
         this.config = config;
         document.body.appendChild(this.app.view);
-
         this.loader = new Loader(this.app.loader, this.config);
         this.loader.preload().then(() => this.start());
 
@@ -47,17 +49,20 @@ class GamneApp {
         this.scenes.start("Game");
     }
 
-    res(key: any) {
+    res(key: string) {
         return this.loader.resources[key].texture;
     }
 
-    sprite(key: any) {
-        return new Sprite(this.res(key));
+    sprite(key: string) {
+        const spriteSrc = Assets.get(key);
+        console.log("[GM][sprite]", spriteSrc);
+        const spr = Sprite.from(spriteSrc);
+        return spr;
     }
-    async loadGameAssets(manifest: any) {
-        await Assets.init({ manifest });
-        Assets.backgroundLoadBundle(["season-1-welcome"]);
-        await Assets.loadBundle(["bird", "pixie", "season-1-welcome"]);
+
+    animatedSprite(images: string[]) {
+        const animatedSpr = new AnimatedSprite(images.map((img) => Texture.from(img)));
+        return animatedSpr;
     }
 }
 

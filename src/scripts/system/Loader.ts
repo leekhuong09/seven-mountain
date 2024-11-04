@@ -1,3 +1,5 @@
+import { Assets } from "pixi.js";
+
 interface Loader {
     loader: any;
     config: any;
@@ -11,20 +13,16 @@ class Loader {
         this.resources = {};
     }
     preload() {
-        for (const asset of this.config.loader) {
-            let key = asset.key.substr(asset.key.lastIndexOf("/") + 1);
-            key = key.substring(0, key.indexOf("."));
-            if (asset.key.indexOf(".png") !== -1 || asset.key.indexOf(".jpg") !== -1) {
-                this.loader.add(key, asset.data.default);
-            }
-        }
-
-        return new Promise((resolve: any) => {
-            this.loader.load((loader: any, resources: any) => {
-                this.resources = resources;
-                resolve();
-            });
+        return new Promise(async (resolve) => {
+            const assets = await this.loadGameAssets(this.config?.manifest);
+            resolve(assets);
         });
+    }
+
+    async loadGameAssets(manifest: any) {
+        await Assets.init({ manifest });
+        Assets.backgroundLoadBundle(["welcome-bg"]);
+        await Assets.loadBundle(["bird", "pixie", "wolf-1", "welcome-bg"]);
     }
 }
 
