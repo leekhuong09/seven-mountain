@@ -1,26 +1,35 @@
-import Animals from ".";
+import { AnimalTypes } from "../../../../constants/type";
+import Animals, { type AnimalsType } from ".";
 
-interface Wolf {
-    app: any;
-    info: any;
+interface WolfType extends AnimalsType {
+    app?: any;
+    info?: any;
 }
 
 class Wolf extends Animals {
-    constructor(app: any) {
-        super();
-        this.app = app;
-        this.info = this.app.animatedSprite([
-            "wolfJump-1.png",
-            "wolfJump-2.png",
-            "wolfJump-3.png",
-            "wolfJump-4.png",
-            "wolfJump-5.png",
-        ]);
-        this.info.loop = true;
-        this.info.animationSpeed = 0.1;
-        this.info.play();
-        this.info.scale.set(4);
-        this.create(this.info);
+    app: any;
+    shapes = {
+        default: [""],
+        run: ["wolf-run-1.png", "wolf-run-2.png", "wolf-run-3.png", "wolf-run-4.png", "wolf-run-5.png"],
+    };
+    constructor({ name }: WolfType) {
+        super({ name, type: `${AnimalTypes.WOLF}` });
+        // this.app = app;
+        // this.info = this.app.animatedSprite([
+        //     "wolf-run-1.png",
+        //     "wolf-run-2.png",
+        //     "wolf-run-3.png",
+        //     "wolf-run-4.png",
+        //     "wolf-run-5.png",
+        // ]);
+        // this.info.loop = true;
+        // this.info.animationSpeed = 0.1;
+        // this.info.play();
+        // this.info.scale.set(2);
+        // this.create(this.info);
+    }
+    create() {
+        return this;
     }
     walk() {}
     run() {}

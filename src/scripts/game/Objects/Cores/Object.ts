@@ -1,27 +1,49 @@
-interface CoreObject {
+import { generateUniqueId } from "./../../../../utils/uuid";
+interface CoreObjectType {
+    id?: string;
+    name?: string;
+    old?: number;
+    width?: number;
+    height?: number;
+    type?: string;
+    position?: {
+        x: number;
+        y: number;
+    };
+}
+
+class CoreObject {
     id: string;
     name: string;
     old: number;
     width: number;
     height: number;
     type: string;
-    info: any;
-}
-
-class CoreObject {
-    constructor() {
-        this.name = "";
-        this.id = "";
-        this.old = 0;
-        this.width = 0;
-        this.height = 0;
-        this.type = "";
+    position: {
+        x: number;
+        y: number;
+    };
+    constructor({
+        name = "",
+        id = generateUniqueId(),
+        old = 0,
+        width = 0,
+        height = 0,
+        type = "",
+        position = { x: 0, y: 0 },
+    }: CoreObjectType) {
+        this.name = name;
+        this.id = id;
+        this.old = old;
+        this.width = width;
+        this.height = height;
+        this.type = type;
+        this.position = position;
     }
-    create(info: any) {
-        this.info = info;
-    }
+    create() {}
     update() {}
     remove() {}
 }
 
+export { type CoreObjectType };
 export default CoreObject;

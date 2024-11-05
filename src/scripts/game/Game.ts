@@ -2,10 +2,12 @@ import { Container } from "pixi.js";
 import { App } from "../system/App";
 import Scene from "../system/Scene";
 import Wolf from "./Objects/Animals/Wolf";
+import { generateUniqueId } from "../../utils/uuid";
 
 interface Game {
     container: any;
     bg: any;
+    animals: any[];
 }
 
 class Game extends Scene {
@@ -14,6 +16,7 @@ class Game extends Scene {
         this.container = new Container();
         this.createBackground();
         this.createAnimals();
+        console.log("[GM][animals]", this.animals);
     }
     createBackground() {
         this.bg = App.sprite("welcome-bg");
@@ -28,9 +31,11 @@ class Game extends Scene {
         this.container.addChild(this.bg);
     }
     createAnimals() {
-        const wolf1 = new Wolf(App);
-        this.container.addChild(wolf1.info);
-        console.log("[GM][Wolf 1]", wolf1);
+        const wolf1 = new Wolf({ name: "Wolf 1", id: generateUniqueId() });
+        const wolf2 = new Wolf({ name: "Wolf 2", id: generateUniqueId() });
+        const wolf3 = new Wolf({ name: "Wolf 3", id: generateUniqueId() });
+        this.animals = [wolf1, wolf2, wolf3];
+        // this.container.addChild(wolf1.info);
     }
 }
 

@@ -46,7 +46,7 @@ class GamneApp {
         // }
         this.scene = new this.config["startScene"]();
         this.app.stage.addChild(this.scene.container);
-        this.scenes.start("Game");
+        // this.scenes.start("Game");
     }
 
     res(key: string) {

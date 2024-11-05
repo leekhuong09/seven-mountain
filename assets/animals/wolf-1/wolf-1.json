@@ -18,94 +18,94 @@
                 "h": 42
             }
         },
-        "wolfJump-1.png": {
+        "wolf-run-1.png": {
             "frame": {
-                "x": 12,
-                "y": 76,
-                "w": 88,
-                "h": 53
+                "x": 24,
+                "y": 91,
+                "w": 107,
+                "h": 62
             },
             "spriteSourceSize": {
                 "x": 0,
                 "y": 0,
-                "w": 88,
-                "h": 53
+                "w": 107,
+                "h": 62
             },
             "sourceSize": {
-                "w": 88,
-                "h": 53
+                "w": 107,
+                "h": 62
             }
         },
-        "wolfJump-2.png": {
+        "wolf-run-2.png": {
             "frame": {
-                "x": 96,
-                "y": 67,
-                "w": 88,
-                "h": 53
+                "x": 130,
+                "y": 91,
+                "w": 107,
+                "h": 62
             },
             "spriteSourceSize": {
                 "x": 0,
                 "y": 0,
-                "w": 88,
-                "h": 53
+                "w": 107,
+                "h": 62
             },
             "sourceSize": {
-                "w": 88,
-                "h": 53
+                "w": 107,
+                "h": 62
             }
         },
-        "wolfJump-3.png": {
+        "wolf-run-3.png": {
             "frame": {
-                "x": 187,
-                "y": 67,
-                "w": 88,
-                "h": 53
+                "x": 243,
+                "y": 91,
+                "w": 107,
+                "h": 62
             },
             "spriteSourceSize": {
                 "x": 0,
                 "y": 0,
-                "w": 88,
-                "h": 53
+                "w": 107,
+                "h": 62
             },
             "sourceSize": {
-                "w": 88,
-                "h": 53
+                "w": 107,
+                "h": 62
             }
         },
-        "wolfJump-4.png": {
+        "wolf-run-4.png": {
             "frame": {
-                "x": 280,
-                "y": 67,
-                "w": 88,
-                "h": 53
+                "x": 364,
+                "y": 91,
+                "w": 107,
+                "h": 62
             },
             "spriteSourceSize": {
                 "x": 0,
                 "y": 0,
-                "w": 88,
-                "h": 53
+                "w": 107,
+                "h": 62
             },
             "sourceSize": {
-                "w": 88,
-                "h": 53
+                "w": 107,
+                "h": 62
             }
         },
-        "wolfJump-5.png": {
+        "wolf-run-5.png": {
             "frame": {
-                "x": 367,
-                "y": 67,
-                "w": 88,
-                "h": 53
+                "x": 477,
+                "y": 91,
+                "w": 107,
+                "h": 62
             },
             "spriteSourceSize": {
                 "x": 0,
                 "y": 0,
-                "w": 88,
-                "h": 53
+                "w": 107,
+                "h": 62
             },
             "sourceSize": {
-                "w": 88,
-                "h": 53
+                "w": 107,
+                "h": 62
             }
         }
     },

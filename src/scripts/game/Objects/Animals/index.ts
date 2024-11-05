@@ -1,21 +1,25 @@
-import CoreObject from "../Cores/Object";
+import CoreObject, { type CoreObjectType } from "../Cores/Object";
 
-interface Animals {
+interface AnimalsType extends CoreObjectType {
+    strenght?: number;
+    speed?: number;
+    health?: number;
+    foods?: any[];
+}
+
+class Animals extends CoreObject {
     strenght: number;
     speed: number;
     health: number;
     foods: any[];
-}
-
-class Animals extends CoreObject {
-    constructor() {
-        super();
-        this.strenght = 0;
-        this.speed = 0;
-        this.health = 0;
-        this.foods = [];
+    constructor({ strenght = 0, speed = 0, health = 0, foods = [], ...props }: AnimalsType) {
+        props.type = "ANIMAL_" + props.type;
+        super(props);
+        this.strenght = strenght;
+        this.speed = speed;
+        this.health = health;
+        this.foods = foods;
     }
-    update() {}
     remove() {}
     walk() {}
     run() {}
@@ -25,4 +29,5 @@ class Animals extends CoreObject {
     development() {}
 }
 
+export { type AnimalsType };
 export default Animals;
