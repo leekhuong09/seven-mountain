@@ -13,7 +13,6 @@ class Animals extends CoreObject {
     health: number;
     foods: any[];
     constructor({ strenght = 0, speed = 0, health = 0, foods = [], ...props }: AnimalsType) {
-        props.type = "ANIMAL_" + props.type;
         super(props);
         this.strenght = strenght;
         this.speed = speed;

@@ -5,7 +5,7 @@ interface CoreObjectType {
     old?: number;
     width?: number;
     height?: number;
-    type?: string;
+    type?: number;
     position?: {
         x: number;
         y: number;
@@ -18,7 +18,7 @@ class CoreObject {
     old: number;
     width: number;
     height: number;
-    type: string;
+    type: number;
     position: {
         x: number;
         y: number;
@@ -29,7 +29,7 @@ class CoreObject {
         old = 0,
         width = 0,
         height = 0,
-        type = "",
+        type = -1,
         position = { x: 0, y: 0 },
     }: CoreObjectType) {
         this.name = name;

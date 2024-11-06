@@ -1,4 +1,4 @@
-import { AnimalTypes } from "../../../../constants/type";
+import { ObjectTypes } from "../../../../constants/type";
 import Animals, { type AnimalsType } from ".";
 
 interface WolfType extends AnimalsType {
@@ -13,7 +13,7 @@ class Wolf extends Animals {
         run: ["wolf-run-1.png", "wolf-run-2.png", "wolf-run-3.png", "wolf-run-4.png", "wolf-run-5.png"],
     };
     constructor({ name }: WolfType) {
-        super({ name, type: `${AnimalTypes.WOLF}` });
+        super({ name, type: ObjectTypes.WOLF });
         // this.app = app;
         // this.info = this.app.animatedSprite([
         //     "wolf-run-1.png",
